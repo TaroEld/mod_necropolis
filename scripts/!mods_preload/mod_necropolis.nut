@@ -11,7 +11,7 @@
 	//spawningNecropolis: Set when it starts spawning
 	//spawningNecropolisCounter: Counts how many units it's spawned, after 7 sets activeNecropolis to false
 	//disabledUntil: set when a town has been converted and non permanent destruction, randoms a date in days when it's going to rebuild based on size
-	local withDeadline = true;
+	local withDeadline = false;
 	::mods_hookNewObject("states/world/asset_manager", function (o)
 	{
 		while (!("update" in o)) o = o[o.SuperName];

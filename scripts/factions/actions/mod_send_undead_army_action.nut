@@ -49,8 +49,9 @@ this.mod_send_undead_army_action <- this.inherit("scripts/factions/faction_actio
 			party.getSprite("banner").setBrush(nearestUndead.getBanner());
 			party.setDescription("A legion of walking dead, summoned from their eternal slumber by Kemmler, the Mad Necromancer");
 			party.setFootprintType(this.Const.World.FootprintsType.Undead);
-			party.setMovementSpeed(100)
-			party.setSlowerAtNight(false);
+			party.setMovementSpeed(85);
+			party.setDiscovered(true);
+			party.setVisibleInFogOfWar(true);
 			party.setUsingGlobalVision(false);
 			party.setLooting(false);
 			party.getFlags().set("IsRandomlySpawned", true);

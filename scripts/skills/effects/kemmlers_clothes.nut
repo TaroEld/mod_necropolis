@@ -1,6 +1,6 @@
 this.kemmlers_clothes <- this.inherit("scripts/skills/skill", {
 	m = {
-		Cooldown = 3
+		Cooldown = 2
 	},
 	function create()
 	{

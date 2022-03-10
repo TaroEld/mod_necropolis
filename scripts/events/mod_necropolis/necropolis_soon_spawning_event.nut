@@ -41,20 +41,20 @@ this.necropolis_soon_spawning_event <- this.inherit("scripts/events/event", {
 				TitleList = null
 				}
 				local undead = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead)
-				local party = undead.spawnEntity(_event.m.Startpoint.getTile(), "Undead", false, this.Const.World.Spawn.UndeadScourge, 300 *_event.getScaledDifficultyMult());
+				local party = undead.spawnEntity(_event.m.Startpoint.getTile(), "Undead", false, this.Const.World.Spawn.UndeadScourge, 250 *_event.getScaledDifficultyMult());
 				this.Const.World.Common.addTroop(party, {Type = marshall}, false, 100);
 				party.getSprite("banner").setBrush(_event.m.Startpoint.getBanner());
 				party.setDescription("A legion of walking dead, summoned from their eternal slumber by Kemmler, the Mad Necromancer");
 				party.setFootprintType(this.Const.World.FootprintsType.Undead);
-				party.setMovementSpeed(100)
-				party.setSlowerAtNight(false);
+				party.setVisibleInFogOfWar(true);
+				party.setMovementSpeed(85);
+				party.setDiscovered(true);
 				party.setUsingGlobalVision(false);
 				party.setLooting(false);
 				party.getFlags().set("IsRandomlySpawned", true);
 				party.getLoot().ArmorParts = this.Math.rand(30, 50);
-				party.getLoot().Money = this.Math.rand(500, 1000);
+				party.getLoot().Money = this.Math.rand(2000, 2500);
 				party.getLoot().Medicine = this.Math.rand(10, 20);
-				party.getLoot().ArmorParts = this.Math.rand(20, 30);
 				party.getSprite("selection").Visible = true;
 				local c = party.getController();
 				c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
